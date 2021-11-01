@@ -11,7 +11,6 @@ public class Contacts {
 	private String email;
 	private String association;
 	
-	
 
 	//This is the constructor, this acts as sort of an ambassador to other classes
 	//giving an explanation on how to use the objects within this class
@@ -99,5 +98,10 @@ public class Contacts {
     	this.association = association;
     	setAddress(address, city, state, zipcode);
     }
-    
+    public void printContactInfo() {
+    	System.out.print(name + " ");
+    	address.printAddress();
+    	System.out.print(" " + number + " " + email + " " + association);
+    	System.out.println();
+    }
 }

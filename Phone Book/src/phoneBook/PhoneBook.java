@@ -15,31 +15,27 @@ public class PhoneBook {
 
 		Contacts c4 = new Contacts("Spider Jerusalem", 2122512009, "transmetro@gmail.com", "Journalist");
 		c4.setAddress("789 Truth Lane", "New York", "NY", 12321);
-		//c4.setName("Aaron Trigg");
+		// c4.setName("Aaron Trigg");
 		System.out.println(c4.getName());
-		
+
 		Contacts c5 = new Contacts("Frank Castle", 2128162004, "punisher@gmail.com", "Gun for Hire");
 		c5.setAddress("456 Vendetta Rd.", "New York", "NY", 32456);
 		System.out.println(c5.getName());
-		
+
 		Contacts c6 = new Contacts("Al Simmons ", 2126011994, "spawn@gmail.com", "Hell Spawn");
 		c6.setAddress("123 Alley Way", "New York", "NY", 23847);
 		System.out.println(c6.getName());
-		
+
 		Directory d1 = new Directory();
 		d1.addContact(c4);
 		d1.addContact(c5);
 		d1.addContact(c6);
 		System.out.println(d1.getContact().toString());
-		
+
 		cache.addEntry(c6);
-		
-		
-
-
 
 		int choice = 0;
-		while (choice != 3) {
+		while (choice != 4) {
 			choice = phoneBookMain();
 			switch (choice) {
 			case 1:
@@ -62,10 +58,13 @@ public class PhoneBook {
 				long case2 = sc.nextLong();
 				d1.removeContact(d1.getByPhone(case2));
 			case 3:
-				System.out.println("Thank you!");
+//				Contacts alphabeticalContacts = new Contacts();
+				d1.getByAlphabet(d1.getContact());
+
 				break;
 			case 4:
-				
+				System.out.println("Thank you!");
+
 				break;
 			default:
 				System.out.println("Please enter a number from 1 to 3");
@@ -76,17 +75,18 @@ public class PhoneBook {
 
 	private void addEntry(Contacts c6) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public static int phoneBookMain() {
 		Scanner sc1 = new Scanner(System.in);
-        
+
 		// print menu
 		System.out.println("+++++WELCOME TO THE PHONEBOOK APP+++++");
 		System.out.println("Enter 1 to add a contact");
 		System.out.println("Enter 2 to delete a contact");
-		System.out.println("Enter 3 to exit the program");
+		System.out.println("Enter 3 to show contacts");
+		System.out.println("Enter 4 to exit the program");
 
 		// return the int input to the switch case statement
 		int choice = sc1.nextInt();
